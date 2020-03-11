@@ -1,6 +1,6 @@
 # PimMeNow!
 
-PimMeNow is a small PowerShell GUI Tool that handles Azure AD Priveleged Identity Management (PIM) connects to multiple tenants.
+PimMeNow is a small PowerShell GUI Tool that handles Azure AD Privileged Identity Management (PIM) connects to multiple tenants.
 
 You configure your PIM profiles with:
 
