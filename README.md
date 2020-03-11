@@ -11,11 +11,11 @@ You configure your PIM profiles with:
 * Duration
 * Microsoft Edge Profile Number
 
-PimMeNow will then start a GUI and give you the choice to connect to one of your PIM profiles. Justification Reasons will be saved to a txt file and offered to you via autocomplete in your next session. 
+PimMeNow will then start a GUI and give you the choice to connect to one of your PIM profiles: 
 
-After you have authenticated against the appropriate AAD, the related Edge profile for that PIM profile will start.
-
-It will also start a counter that counts the time left for your PIM session. 
+* Justification reasons will be saved to a txt file and offered to you via autocomplete in your next session. 
+* After you have authenticated against the appropriate AAD, the related Edge profile for that PIM profile will start.
+* It will also start a counter that counts the time left for your PIM session. 
 
 More information here on my blog: https://emptydc.com/2020/03/11/pim-me-now-!
 
