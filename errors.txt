@@ -1,0 +1,57 @@
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+Exception setting "BackColor": "Cannot convert value "lightgrey" to type "System.Drawing.Color". Error: "lightgrey is not a valid value for Int32.""
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+Exception setting "BackColor": "Cannot convert value "darkgrey" to type "System.Drawing.Color". Error: "darkgrey is not a valid value for Int32.""
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+Exception setting "BackColor": "Cannot convert value "grey" to type "System.Drawing.Color". Error: "grey is not a valid value for Int32.""
+Cannot bind argument to parameter 'RoleDefinitionId' because it is null.
+Error occurred while executing GetAzureADMSPrivilegedRoleDefinitions 
+Code: UnknownError
+Message: 
+InnerError:
+  RequestId: d9d5459b-004c-4b6b-9675-bcbd364c53d1
+  DateTimeStamp: Wed, 11 Mar 2020 12:56:00 GMT
+HttpStatusCode: Forbidden
+HttpStatusDescription: Forbidden
+HttpResponseStatus: Completed
+
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+Exception setting "BackColor": "Cannot convert value "grey" to type "System.Drawing.Color". Error: "grey is not a valid value for Int32.""
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+Exception setting "BackColor": "Cannot convert value "grey" to type "System.Drawing.Color". Error: "grey is not a valid value for Int32.""
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+Exception setting "BackColor": "Cannot convert value "grey" to type "System.Drawing.Color". Error: "grey is not a valid value for Int32.""
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+Exception setting "BackColor": "Cannot convert value "grey" to type "System.Drawing.Color". Error: "grey is not a valid value for Int32.""
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+Exception setting "BackColor": "Cannot convert value "grey" to type "System.Drawing.Color". Error: "grey is not a valid value for Int32.""
+You cannot call a method on a null-valued expression.
+The remote name could not be resolved: '100pcloud.com'
+The property 'BackColor' cannot be found on this object. Verify that the property exists and can be set.
+Exception setting "BackColor": "Cannot convert value "grey" to type "System.Drawing.Color". Error: "grey is not a valid value for Int32.""

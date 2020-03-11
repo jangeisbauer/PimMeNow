@@ -10,7 +10,7 @@
 # 
 # Written by: Jan Geisbauer | Twitter: @janvonkirchheim | Blog: https://emptydc.com | Podcast: https://hairlessinthecloud.com 
 #
-# Blog Post on usage of PimMeNow: https://emptydc.com/2020/03/11/pim-me-now-!
+# Blog Post on usage of PimMeNow: https://emptydc.com/2020/03/11/pim-me-now/
 # Get latest version on GitHub: https://github.com/jangeisbauer/PimMeNow
 #
 # Help By:
@@ -22,7 +22,7 @@
 # Your PIM Profiles
 $accounts = @(
     # add pim account: name of profile, accountname, tenantID, profile-number edge, pim role, duration in hours
-    ("Jule Sec admin","jule@100pcloud.com","bfxxxxxxxxxxxxxxxxxxxxxxxx97","Profile 5","security administrator",2), #default
+    ("Jule Sec admin","jule@100pcloud.com","bf830bb0-fb9g-4081-9a9c-53859bc1dc97","Profile 5","security administrator",2), #default
     ("Jule MSX admin","jule@100pcloud.com","bf8xxxxxxxxxxxxxxxxxxxxxxxxdc97","Profile 5","Exchange administrator",2), 
     ("AdmLab GA","administrator@100pcloud.com","bf8xxxxxxxxxxxxxxxxxxxxxxxxc97","Profile 4","security administrator",2)
 )
@@ -60,6 +60,8 @@ if($systemCheck -eq 1)
     $form.Size = New-Object System.Drawing.Size(580,500)
     $form.StartPosition = 'CenterScreen'
     $form.Font = New-Object System.Drawing.Font("opensans",9,[System.Drawing.FontStyle]::bold)
+    $form.BackColor = "grey"
+    $form.MainMenuStrip.BackColor = "white"
 
     # OK Button
     $OKButton = New-Object System.Windows.Forms.Button
@@ -267,6 +269,7 @@ if($systemCheck -eq 1)
  $form.Size = New-Object System.Drawing.Size(235,150)
  $form.Font = New-Object System.Drawing.Font("opensans",9,[System.Drawing.FontStyle]::Regular)
 
+
  # reset label for counter
  $label.Size =  New-Object System.Drawing.Size(195,40) 
  $label.Location = New-Object System.Drawing.Point(10,20)
@@ -294,11 +297,8 @@ $timer.Interval=60000
 $timer.add_Tick({CountDown})
 $timer.Start()    
 
-if($Error[0] -eq $null)
-{
-    [System.Windows.Forms.Application]::EnableVisualStyles()
-    [System.Windows.Forms.Application]::Run($form)
-}
+[System.Windows.Forms.Application]::EnableVisualStyles()
+[System.Windows.Forms.Application]::Run($form)
 
 # error log
 if (!(Test-Path "errors.txt"))
