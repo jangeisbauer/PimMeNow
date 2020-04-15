@@ -3,7 +3,7 @@
 #    / __ \/  _/  |/  /  /  |/  / ____/  / | / / __ \ |     / /
 #   / /_/ // // /|_/ /  / /|_/ / __/    /  |/ / / / / | /| / / 
 #  / ____// // /  / /  / /  / / /___   / /|  / /_/ /| |/ |/ /  
-# /_/   /___/_/  /_/  /_/  /_/_____/  /_/ |_/\____/ |__/|__/   Version 0.1 March 6, 2020
+# /_/   /___/_/  /_/  /_/  /_/_____/  /_/ |_/\____/ |__/|__/   Version 0.1.1 April 15, 2020
 #
 # *****************************************************************************************************************************************
 # P i m M e N o w - PS Script to PIM you with comfort ;-)
@@ -18,7 +18,12 @@
 # Thanks to Stephen Owen @foxdeploy for this post: https://foxdeploy.com/2014/09/18/adding-autocomplete-to-your-textbox-forms-in-powershell/
 #
 # *****************************************************************************************************************************************
-#
+# Changelog
+# ----------------------------------------------------------------------------------------------------------------------------------------
+# 15. April 2020: add date & sessiondata to error log
+# ----------------------------------------------------------------------------------------------------------------------------------------
+
+
 # Your PIM Profiles
 $accounts = @(
     # add pim account: name of profile, accountname, tenantID, profile-number edge, pim role, duration in hours
@@ -60,8 +65,6 @@ if($systemCheck -eq 1)
     $form.Size = New-Object System.Drawing.Size(580,500)
     $form.StartPosition = 'CenterScreen'
     $form.Font = New-Object System.Drawing.Font("opensans",9,[System.Drawing.FontStyle]::bold)
-    $form.BackColor = "grey"
-    $form.MainMenuStrip.BackColor = "white"
 
     # OK Button
     $OKButton = New-Object System.Windows.Forms.Button
@@ -84,7 +87,7 @@ if($systemCheck -eq 1)
     # check version
     try 
     {
-        $checkversion =Invoke-WebRequest http://100pcloud.com/version.txt  
+        $checkversion =Invoke-WebRequest "http://100pcloud.com/version.txt"  
     }
     catch 
     {
@@ -152,10 +155,12 @@ if($systemCheck -eq 1)
                 $schedule.StartDateTime = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
 
                 # activate your role
-                Open-AzureADMSPrivilegedRoleAssignmentRequest -ProviderId 'aadRoles' -ResourceId $TenantID -RoleDefinitionId $roleToAssign.id -SubjectId $oid.objectID -Type 'UserAdd' -AssignmentState 'Active' -reason "mein comment" -Schedule $schedule 
+                Open-AzureADMSPrivilegedRoleAssignmentRequest -ProviderId 'aadRoles' -ResourceId $TenantID -RoleDefinitionId $roleToAssign.id -SubjectId $oid.objectID -Type 'UserAdd' -AssignmentState 'Active' -reason $textBox.Text -Schedule $schedule 
 
                 # open edge with configured profile (no, other browsers are not possible here ;-)
                 Start-Process -FilePath "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" -ArgumentList "--profile-directory=`"$edgeProfile`""
+
+                # disconnect azuread
                 disconnect-azuread
             }
         }
@@ -307,5 +312,10 @@ if (!(Test-Path "errors.txt"))
 }
 if($Error.count -ne 0)
 {
+    $date = get-date
+    # add session data
+    $sessionData = "Admin: " + $admin + " | TenantID: " + $TenantID + " | Profile: " + $edgeProfile + " | Pim-Role: " + $role + " | Duration: " +$duration 
+    Add-Content -path errors.txt -value $date
+    Add-Content -path errors.txt -value $sessionData
     Add-Content -path errors.txt -value $Error
 }
