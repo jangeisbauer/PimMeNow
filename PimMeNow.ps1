@@ -3,8 +3,8 @@
 #    / __ \/  _/  |/  /  /  |/  / ____/  / | / / __ \ |     / /
 #   / /_/ // // /|_/ /  / /|_/ / __/    /  |/ / / / / | /| / / 
 #  / ____// // /  / /  / /  / / /___   / /|  / /_/ /| |/ |/ /  
-# /_/   /___/_/  /_/  /_/  /_/_____/  /_/ |_/\____/ |__/|__/   Version 0.1.1 April 15, 2020
-#
+# /_/   /___/_/  /_/  /_/  /_/_____/  /_/ |_/\____/ |__/|__/   April 15, 2020
+$version = "0.1.1"
 # *****************************************************************************************************************************************
 # P i m M e N o w - PS Script to PIM you with comfort ;-)
 # 
@@ -37,7 +37,7 @@ if (!(Test-Path "justificationreasons.txt"))
 {
     New-Item -path justificationreasons.txt -type "file" 
 }
-$version = 0.1
+
 $justification = Get-content 'justificationreasons.txt'
 $systemCheck = 0
 $Error.Clear()
